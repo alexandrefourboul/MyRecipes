@@ -1,0 +1,6 @@
+- Extraire ingrédients de liste ingrédients
+- si ingrédient inexistant proposer de le rajouter
+- lire quantité (et faire conversion)
+- si modif sur recette refaire trourner ?
+- Explorer de recettes ?
+- changer icone
