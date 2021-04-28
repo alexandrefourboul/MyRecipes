@@ -3,7 +3,8 @@
 
 
 class Ingredient:
-    
+
+    def __init__(self):
 
 
 class Vegetal(Ingredient):
