@@ -4,3 +4,4 @@
 - si modif sur recette refaire trourner ?
 - Explorer de recettes ?
 - changer icone
+- base de données open food facts 
