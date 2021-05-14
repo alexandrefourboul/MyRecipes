@@ -1,26 +1,42 @@
 # This is a sample Python script.
 import tkinter as tk
 import tkinter.font as tkfont
-from text_to_num import text2num
+from text_to_num import alpha2digit
 import re
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 # Press the green button in the gutter to run the script.
+mot_arret_fr = ["de", "d"]
+
+def ingredient_schema_base(list_i):
+    inter = list(set(list_i) & set(mot_arret_fr))
+    if len(inter) > 0:
+        # normalement le premier mot d'arret devrait fonctionner
+        delim = list_i.index(inter[0])
+        u = ' '.join(list_i[1:delim])
+        i = ' '.join(list_i[delim + 1:])
+    else:
+        u = "unit"
+        i = ' '.join(list_i[1:])
+    return(u,i)
+
 
 def ingredient_decomposer(list_i):
-
+    # on change les nombres écrits en toutes lettres en décimals
+    # TODO gestion des langues
+    list_i = [alpha2digit(x, "fr") for x in list_i]
     # on part du principe que la quantité est toujours le premier mot
     if list_i[0].isdigit():
         # TODO gestion des décimal
         q = int(list_i[0])
+        u, i = ingredient_schema_base(list_i)
     else:
-        # TODO gestion des langues
-        q = text2num(list_i[0],"fr")
-    delim = list_i.index(list(set(list_i) & set(["de", "d"]))[0])
+        # pas forcément 1 seul unité mais quantité non identifiable
+        q = 1
+        u = "unit"
+        i = ' '.join(list_i)
 
-    u = ' '.join(list_i[1:delim])
-    i = ' '.join(list_i[delim+1:])
     return(q,u,i)
 
 
@@ -48,6 +64,7 @@ if __name__ == '__main__':
 
     def callback():
         ing_text = e.get("1.0",'end-1c') # ici gestion du texte
+
         text_2_ing(ing_text)
     b = tk.Button(ecran_ing, text = "OK", width = 100, command = callback)
     b.pack(side="bottom")
