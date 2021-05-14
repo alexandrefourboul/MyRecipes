@@ -19,14 +19,14 @@ est ce que cette enchainement de requete passe en terme de nombre de requetes BD
   
 
 2. si utilisation de open food facts : 
-https://fr.openfoodfacts.org/produit/3270160177387/4-dos-de-cabillaud-picard
+- https://fr.openfoodfacts.org/produit/3270160177387/4-dos-de-cabillaud-picard
 https://fr.openfoodfacts.org/categorie/morues
 par exemple dos de cabillaud n'existe pas en tant que catégorie
 que en tant que produit fini(ce qui a priori nous intéresse pas)
 donc il faudrait créer le noeud dos de cabillaud(ou arriver à comprendre comment le ratacher à open food facts)
-   pour info, open food facts france = 19809 catégories
-   
-par contre si on travaille avec open food facts : possibilités de faire un extract des produits corresspondants pour une recette
+- Pour info, open food facts france = 19809 catégories.
+- Par contre si on travaille avec open food facts : possibilités de faire un extract des produits corresspondants pour une recette
 avec les scores de chaque
-ce qui serait intéressant c'est de découvrir comment se fait les liaisons entre noms de produits et catégories
+- Ce qui serait intéressant c'est de découvrir comment se fait les liaisons entre noms de produits et catégories
 je fouille la dedans pour en savoir plus : https://github.com/openfoodfacts/openfoodfacts-server
+- https://github.com/openfoodfacts/openfoodfacts-python possibilté de faire des requêtes ici. Problème étant que la data source est centralisé sur le produit commercialisé alors que nous on ne cherche que les informations de catégories
